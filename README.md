@@ -169,6 +169,10 @@ pyyaml
 Contributing
 Contributions are welcome. Please feel free to submit a Pull Request.
 
+Author mcml1225
+GitHub: @mcml1225
+Email:mcml1225@gmail.com
+
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
@@ -176,3 +180,4 @@ Acknowledgments
 XM (Operador del Sistema Interconectado Nacional de Colombia) for providing public data
 
 Facebook Prophet team for the forecasting library
+
