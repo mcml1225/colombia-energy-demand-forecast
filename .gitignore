@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+venv/
+env/
+.env
+
+# Data files (too large for GitHub)
+data/raw/*.xlsx
+data/raw/*.xls
+data/processed/*.csv
+*.xlsx
+*.xls
+
+# Models
+*.pkl
+*.joblib
+models/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# API
+__pycache__/

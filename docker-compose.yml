@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: energy-forecast-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./predictions:/app/predictions
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
