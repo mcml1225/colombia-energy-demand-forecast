@@ -63,16 +63,16 @@ Run the complete pipeline
 python main.py
 Run with specific options
 
-# Skip download (use existing files)
+#### Skip download (use existing files)
 python main.py --no-download
 
-# Download only specific years
+#### Download only specific years
 python main.py --years 2020 2021 2022 2023
 
-# Skip training (use existing model)
+#### Skip training (use existing model)
 python main.py --no-train
 
-# Generate predictions only
+#### Generate predictions only
 python main.py --no-download --no-train
 Use individual modules
 python
@@ -80,19 +80,19 @@ from src.downloader import XMDataDownloader
 from src.preprocessor import DataPreprocessor
 from src.train_model import DemandForecaster
 
-# Download data
+#### Download data
 downloader = XMDataDownloader()
 downloader.download_all()
 
-# Preprocess
+#### Preprocess
 preprocessor = DataPreprocessor()
 data = preprocessor.run_pipeline()
 
-# Train model
+#### Train model
 forecaster = DemandForecaster()
 forecaster.train(data)
 
-# Generate predictions
+#### Generate predictions
 predictions = forecaster.predict(periods=90)
 print(predictions)
 Project Structure
