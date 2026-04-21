@@ -1,5 +1,23 @@
 # Colombia Energy Demand Forecast
 
+![Python Version](https://img.shields.io/badge/python-3.11-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.104-green.svg)
+![Prophet](https://img.shields.io/badge/Prophet-1.1-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/mcml1225/colombia-energy-demand-forecast)
+![GitHub Actions](https://github.com/mcml1225/colombia-energy-demand-forecast/actions/workflows/test.yml/badge.svg)
+![GitHub stars](https://img.shields.io/github/stars/mcml1225/colombia-energy-demand-forecast?style=social)
+
+[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com)
+
+<!-- Repository Stats -->
+![GitHub repo size](https://img.shields.io/github/repo-size/mcml1225/colombia-energy-demand-forecast)
+![GitHub code size](https://img.shields.io/github/languages/code-size/mcml1225/colombia-energy-demand-forecast)
+![GitHub language count](https://img.shields.io/github/languages/count/mcml1225/colombia-energy-demand-forecast)
+![GitHub top language](https://img.shields.io/github/languages/top/mcml1225/colombia-energy-demand-forecast)
+
 A complete time series forecasting pipeline for Colombia's National Interconnected System (SIN) energy demand, using historical data from XM (the Colombian electricity market operator).
 
 ## Overview
