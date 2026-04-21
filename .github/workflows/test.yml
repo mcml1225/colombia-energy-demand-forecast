@@ -1,5 +1,3 @@
-# Agregar contenido a test.yml
-@'
 name: Test Energy Forecast API
 
 on:
@@ -34,4 +32,3 @@ jobs:
     
     - name: Run quick test
       run: python -c "print('All tests passed!')"
-'@ | Out-File -FilePath .github/workflows/test.yml -Encoding UTF8
