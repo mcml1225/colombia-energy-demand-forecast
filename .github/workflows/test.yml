@@ -22,13 +22,25 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r requirements-api.txt
+        pip install pandas numpy prophet scikit-learn
+        pip install fastapi uvicorn pydantic
+        pip install openpyxl xlrd requests beautifulsoup4
     
     - name: Test imports
       run: |
-        python -c "from src.preprocessor_simple import SimpleDataPreprocessor; print('Preprocessor OK')"
-        python -c "from api.main import app; print('API OK')"
+        python -c "from src.preprocessor_simple import SimpleDataPreprocessor; print('✓ Preprocessor OK')"
+        python -c "import fastapi; print('✓ FastAPI OK')"
+        python -c "import prophet; print('✓ Prophet OK')"
+        python -c "import pandas as pd; print('✓ Pandas OK')"
+    
+    - name: Test API module
+      run: |
+        python -c "
+import sys
+sys.path.insert(0, '.')
+from api.main import app
+print('✓ API module loaded successfully')
+"
     
     - name: Run quick test
-      run: python -c "print('All tests passed!')"
+      run: echo "All tests passed!"
