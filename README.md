@@ -48,22 +48,21 @@ The dataset contains daily energy demand for Colombia's SIN system from 2000 to 
 
 ### 1. Clone the repository
 
-```bash
 git clone https://github.com/YOUR_USERNAME/colombia-energy-demand-forecast.git
 cd colombia-energy-demand-forecast
-2. Create virtual environment
-bash
+### 2. Create virtual environment
+
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-3. Install dependencies
-bash
+### 3. Install dependencies
+
 pip install -r requirements.txt
 Usage
 Run the complete pipeline
-bash
+
 python main.py
 Run with specific options
-bash
+
 # Skip download (use existing files)
 python main.py --no-download
 
@@ -97,7 +96,7 @@ forecaster.train(data)
 predictions = forecaster.predict(periods=90)
 print(predictions)
 Project Structure
-text
+
 colombia-energy-demand-forecast/
 ├── src/
 │   ├── downloader.py      # Downloads Excel files from XM
