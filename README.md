@@ -48,7 +48,7 @@ The dataset contains daily energy demand for Colombia's SIN system from 2000 to 
 
 ### 1. Clone the repository
 
-git clone https://github.com/YOUR_USERNAME/colombia-energy-demand-forecast.git
+git clone https://github.com/mcml1225/colombia-energy-demand-forecast.git
 cd colombia-energy-demand-forecast
 ### 2. Create virtual environment
 
@@ -169,6 +169,10 @@ pyyaml
 Contributing
 Contributions are welcome. Please feel free to submit a Pull Request.
 
+Author mcml1225
+GitHub: @mcml1225
+Email:mcml1225@gmail.com
+
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
@@ -176,3 +180,4 @@ Acknowledgments
 XM (Operador del Sistema Interconectado Nacional de Colombia) for providing public data
 
 Facebook Prophet team for the forecasting library
+
