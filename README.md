@@ -48,7 +48,7 @@ The dataset contains daily energy demand for Colombia's SIN system from 2000 to 
 
 ### 1. Clone the repository
 
-git clone https://github.com/YOUR_USERNAME/colombia-energy-demand-forecast.git
+git clone https://github.com/mcml1225/colombia-energy-demand-forecast.git
 cd colombia-energy-demand-forecast
 ### 2. Create virtual environment
 
