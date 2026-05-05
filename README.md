@@ -95,8 +95,9 @@ forecaster.train(data)
 #### Generate predictions
 predictions = forecaster.predict(periods=90)
 print(predictions)
-Project Structure
 
+#### Project Structure
+```
 colombia-energy-demand-forecast/
 ├── src/
 │   ├── downloader.py      # Downloads Excel files from XM
@@ -111,7 +112,8 @@ colombia-energy-demand-forecast/
 ├── config.yaml            # Configuration parameters
 ├── main.py                # Main pipeline script
 └── requirements.txt       # Python dependencies
-Model Performance
+``` 
+#### Model Performance
 The Prophet model achieves the following metrics on test data (last 365 days):
 
 MAE: ~2,500,000 kWh
