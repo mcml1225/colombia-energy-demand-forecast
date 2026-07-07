@@ -98,45 +98,50 @@ class DemandForecaster:
         
         return self.model
     
-    def predict(self, periods=None, last_date=None):
+    def predict(self, periods=None, last_date=None, start_date=None):
         """
-        Generate future predictions starting from the year after last data point
-        
-        Args:
-            periods: Number of days to predict (default: 365)
-            last_date: Last date from historical data (auto-detected if not provided)
-        """
+        Generate future predictions
+    
+     Args:
+          periods: Number of days to predict (default: 365)
+          last_date: Last date from historical data (for year-based prediction)
+          start_date: Specific start date for prediction (takes precedence over last_date)
+     """
         if self.model is None:
-            raise ValueError("Model not trained yet. Call train() first.")
-        
+          raise ValueError("Model not trained yet. Call train() first.")
+    
         periods = periods or self.config['forecast']['periods']
-        
-        # Create future dates starting from next year
-        if last_date:
-            # Start from January 1st of next year
+    
+        # Create future dates
+        if start_date is not None:
+            # Use specific start date
+            start = pd.Timestamp(start_date).normalize()
+            future_dates = pd.date_range(start=start, periods=periods, freq='D')
+        elif last_date is not None:
+         # Start from January 1st of next year
             next_year = last_date.year + 1
             start_date = pd.Timestamp(f'{next_year}-01-01')
             future_dates = pd.date_range(start=start_date, periods=periods, freq='D')
         else:
-            # Fallback: use current date
+             # Fallback: use current date
             start_date = pd.Timestamp.now() + pd.DateOffset(days=1)
             future_dates = pd.date_range(start=start_date, periods=periods, freq='D')
-        
+    
         # Create future dataframe for Prophet
         future = pd.DataFrame({'ds': future_dates})
-        
+    
         # Generate forecast
         forecast = self.model.predict(future)
-        
+    
         # Extract relevant columns
         predictions = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
         predictions = predictions.rename(columns={
-            'ds': 'date',
-            'yhat': 'predicted_demand_kwh',
-            'yhat_lower': 'lower_bound_kwh',
-            'yhat_upper': 'upper_bound_kwh'
+         'ds': 'date',
+         'yhat': 'predicted_demand_kwh',
+         'yhat_lower': 'lower_bound_kwh',
+         'yhat_upper': 'upper_bound_kwh'
         })
-        
+    
         return predictions
     
     def evaluate(self, y_true, y_pred):

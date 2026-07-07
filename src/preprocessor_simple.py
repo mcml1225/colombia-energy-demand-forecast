@@ -119,11 +119,17 @@ class SimpleDataPreprocessor:
         print(f"After cleaning: {len(data)} records")
         return data
     
-    def save_processed_data(self, df, filename="colombia_demand_2000_2024.csv"):
-        """Save the processed dataset"""
+    def save_processed_data(self, df, filename=None):
+        """Save the processed dataset with dynamic filename"""
         if len(df) == 0:
             return None
-            
+        
+        # Generar nombre dinámico basado en el rango de fechas
+        if filename is None:
+            min_year = df['date'].min().year
+            max_year = df['date'].max().year
+            filename = f"colombia_demand_{min_year}_{max_year}.csv"
+        
         output_path = self.processed_path / filename
         df.to_csv(output_path, index=False)
         print(f"Saved to {output_path}")
